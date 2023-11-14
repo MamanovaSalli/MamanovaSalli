@@ -1,13 +1,12 @@
 // Задание 1
 
 
-var list =  ['li', 'div', 'li', 'p', 'h1', 'p', 'h1', 'div', 'div', 'li', 'h1',  'p', 'h1', 'ol', 'br'] // это ваш список тегов
+var list =  ['li', 'div', 'li', 'p', 'h1', 'p', 'h1', 'div', 'div', 'li', 'h1',  'p', 'h1', 'ol', 'br']
 
 
-var result = {} // Это пустой объект, который будем заполнять
-// var arrayList =[]
+var result = {}
 
-for (var i = 0; i < list.length; i++){ // это цикл
+for (var i = 0; i < list.length; i++){
     var tag = list[i]
 
     if (result[tag]) {
@@ -16,13 +15,7 @@ for (var i = 0; i < list.length; i++){ // это цикл
         result[tag] = 1
     }
 
-    // result[tag] = (result[tag] ? result[tag] + 1 : 1)
 
-
-    // if (list[i][0] === 'l' || list[i][0] === 'd' || list[i][0] === 'p'){
-    //     console.log(list[i])
-    //     arrayList.push(list[i][0])
-    // }
 }
 
 console.log(result)
