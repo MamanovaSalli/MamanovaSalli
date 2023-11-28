@@ -1,5 +1,3 @@
-
-
 //todolist
 
 const createButton = document.querySelector('#create_button')
@@ -8,7 +6,7 @@ const todoList = document.querySelector('.todo_list')
 
 
 const createTodo = () => {
-    if(input.value.trim() === ''){
+    if (input.value.trim() === '') {
         return alert('Произошла ошибка, введите какой-нибудь текст')
     }
 
@@ -21,7 +19,7 @@ const createTodo = () => {
     const deleteButton = document.createElement('button')
     deleteButton.setAttribute('class', 'delete_button')
     deleteButton.innerText = 'DELETE'
-    deleteButton.addEventListener('click', function (){
+    deleteButton.addEventListener('click', function () {
         todoList.removeChild(div)
     })
     div.appendChild(deleteButton)
@@ -29,32 +27,34 @@ const createTodo = () => {
     const editButton = document.createElement('button')
     editButton.setAttribute('class', 'edit_button')
     editButton.innerText = 'EDIT'
-    editButton.addEventListener("click", function () {
-        const editText = prompt("Отредактируйте свою задачу:")
-            if (editText !== null) {
-                 div.innerText = editText
-            }
 
-        })
-        div.appendChild(editButton)
+    div.appendChild(editButton)
 
 
     const text = document.createElement('h3')
     text.innerText = input.value
-    text.addEventListener('click', ()=>{
+    text.addEventListener('click', () => {
         text.classList.toggle('toggle')
     })
 
     divButton.append(deleteButton, editButton)
     div.append(text, divButton)
 
+    editButton.addEventListener("click", function () {
+        const editText = prompt("Отредактируйте свою задачу:")
+        if (editText !== "") {
+            text.innerText = editText
+        }
+
+    })
+
     todoList.prepend(div)
     input.value = ''
 }
 
 createButton.onclick = () => createTodo()
-window.onkeydown = (event)=>{
-   if(event.code === 'Enter'){
-       createTodo()
-   }
+window.onkeydown = (event) => {
+    if (event.code === 'Enter') {
+        createTodo()
+    }
 }
