@@ -1,0 +1,36 @@
+.container {
+    width: 700px;
+    height: 700px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+
+}
+
+.mystery {
+    /*margin-left: 35px;*/
+    border: 2px solid darkgray;
+    background-color: #ec9eff;
+}
+
+.mystery_list {
+    margin-top: 45px;
+}
+
+.ans1 {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    background-color: #c324ff;
+}
+
+.riddlesBlock {
+    background-color: white;
+    border: purple;
+    padding: 10px;
+}
